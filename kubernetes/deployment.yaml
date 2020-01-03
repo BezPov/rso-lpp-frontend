@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lpp-frontend
+spec:
+  selector:
+    matchLabels:
+      app: lpp-frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lpp-frontend
+    spec:
+      containers:
+        - image: bezpov/lpp-frontend:1.0.0
+          name: lpp-frontend-container
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lpp-frontend-service
+  namespace: default
+  labels:
+    app: lpp-frontend
+spec:
+  ports:
+    - protocol: TCP
+      port: 82
+      targetPort: 8080
+  selector:
+    app: lpp-frontend
+  type: NodePort
