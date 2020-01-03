@@ -4,7 +4,8 @@ WORKDIR /usr/src/app
 COPY package.json .
 RUN npm install
 COPY . .
+RUN npm install http-server -g
+RUN npm run build
 
 EXPOSE 8080
-
-CMD ["npm", "run", "serve"]
+CMD [ "http-server", "dist" ]
