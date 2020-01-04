@@ -48,7 +48,7 @@
 				const creditAccount = vm.$store.state.user.creditAccount;
 
 				if (creditAccount.value >= vm.ticketPrice) {
-					vm.axios.post('http://35.225.182.234/api/payment/transaction/create', {
+					vm.axios.post('http://lpp-payment-service:85/transaction/create', {
 						creditAccount: creditAccount._id,
 						price: vm.ticketPrice,
 						type: 'pull'

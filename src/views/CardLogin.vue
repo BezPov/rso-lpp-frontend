@@ -41,7 +41,7 @@
 				vm.status = 'reading';
 				vm.label = 'Prosimo počakajte...';
 
-				vm.axios.post('http://35.225.182.234/api/account/user/cardLogin', {
+				vm.axios.post('http://lpp-account-service:80/user/cardLogin', {
 					cardId: vm.cardId
 				})
 					.then(function (response) {
