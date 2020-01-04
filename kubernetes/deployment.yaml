@@ -13,7 +13,7 @@ spec:
         app: lpp-frontend
     spec:
       containers:
-        - image: bezpov/lpp-frontend:1.0.3
+        - image: bezpov/lpp-frontend:1.0.4
           name: lpp-frontend-container
           ports:
             - containerPort: 8080
