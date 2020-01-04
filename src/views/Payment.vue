@@ -50,7 +50,8 @@
 				if (creditAccount.value >= vm.ticketPrice) {
 					vm.axios.post('http://localhost:8082/transaction/create', {
 						creditAccount: creditAccount._id,
-						price: vm.ticketPrice
+						price: vm.ticketPrice,
+						type: 'pull'
 					})
 						.then(function (response) {
 							console.log(response);
