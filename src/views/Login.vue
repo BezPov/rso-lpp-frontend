@@ -31,7 +31,9 @@
 			</router-link>
 		</v-col>
 		<v-col cols="12">
-			Prijavi se z urbano
+			<router-link to="/profile/cardLogin">
+				Prijavi se z urbano
+			</router-link>
 		</v-col>
 	</v-row>
 </template>
