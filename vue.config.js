@@ -1,6 +1,9 @@
 module.exports = {
-    devServer: {
-        disableHostCheck: true
-    },
-    publicPath: '/app/'
-};
+  "devServer": {
+    "disableHostCheck": true
+  },
+  "publicPath": "/app/",
+  "transpileDependencies": [
+    "vuetify"
+  ]
+}
