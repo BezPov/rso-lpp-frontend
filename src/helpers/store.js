@@ -28,6 +28,9 @@ const store = new Vuex.Store({
 	getters: {
 		currentUser (state) {
 			return state.user;
+		},
+		creditAccount (state) {
+			return state.user.creditAccount;
 		}
 	},
 	actions: {
