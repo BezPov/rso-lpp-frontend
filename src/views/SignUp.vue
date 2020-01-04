@@ -68,7 +68,7 @@
 					required
 			></v-text-field>
 		</v-col>
-		<v-col cols="12">
+		<v-col cols="12" class="button-wrapper">
 			<v-btn large dark color="#33C88F" v-on:click="signUp()">USTVARI RAČUN</v-btn>
 		</v-col>
 	</v-row>
@@ -112,6 +112,8 @@
 	}
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+	.button-wrapper {
+		margin-bottom: 40px;
+	}
 </style>

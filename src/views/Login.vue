@@ -73,4 +73,8 @@
 		height: 150px;
 		border-radius: 150px;
 	}
+	a {
+		color: #5d5d5d !important;
+		text-decoration: none;
+	}
 </style>

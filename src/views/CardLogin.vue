@@ -21,8 +21,9 @@
 		name: "CardLogin",
 		data() {
 			return {
-				cardId: '1234',
-				label: 'Prislonite kartico urbana k napravi',
+				status: 'idle',
+				cardId: '1234', // CHANGE THIS VALUE FOR ANOTHER CARD
+				label: 'Prislonite kartico Urbana k napravi',
 				interval: {},
 				value: 0
 			}
@@ -37,6 +38,9 @@
 			cardLogin() {
 				let vm = this;
 
+				vm.status = 'reading';
+				vm.label = 'Prosimo počakajte...';
+
 				vm.axios.post('http://localhost:8080/user/cardLogin', {
 					cardId: vm.cardId
 				})
@@ -45,6 +49,8 @@
 						vm.interval = setInterval(() => {
 							if (vm.value === 100) {
 								clearInterval(vm.interval);
+								vm.status = 'idle';
+								vm.label = 'Prijava uspešna';
 								setTimeout(() => {
 									if (response && response.status === 200) vm.$store.commit('login', response.data);
 								}, 1000);
@@ -64,5 +70,10 @@
 <style scoped lang="scss">
 	.v-progress-circular {
 		margin: 1rem;
+	}
+
+	a {
+		color: #5d5d5d !important;
+		text-decoration: none;
 	}
 </style>
