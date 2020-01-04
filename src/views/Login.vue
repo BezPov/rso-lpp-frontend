@@ -55,13 +55,22 @@
 					email: vm.email,
 					password: vm.password
 				})
-					.then(function (response) {
-						console.log(response);
-						if (response && response.status === 200) vm.$store.commit('login', response.data);
+				.then(function (response) {
+					console.log(response);
+					if (response && response.status === 200) vm.$store.commit('login', response.data);
+
+					// get user's credit account data
+					vm.axios.get(`http://localhost:8082/creditAccount/${response.data._id}`)
+					.then(function (creditResponse) {
+						if (creditResponse) vm.$store.commit('appendCreditAccount', creditResponse.data);
 					})
 					.catch(function (error) {
 						console.log(error);
-					});
+					})
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			}
 		}
 	}

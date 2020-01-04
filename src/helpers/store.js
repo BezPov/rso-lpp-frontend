@@ -18,6 +18,11 @@ const store = new Vuex.Store({
 			state.user = {
 				loggedIn: false
 			};
+		},
+		appendCreditAccount (state, data) {
+			if (state.user) {
+				state.user.creditAccount = data;
+			}
 		}
 	},
 	getters: {
