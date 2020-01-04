@@ -92,7 +92,7 @@
 			signUp() {
 				let vm = this;
 
-				vm.axios.post('http://localhost:8080/user/create', {
+				vm.axios.post('http://35.225.182.234/api/account/user/create', {
 					name: vm.name,
 					surname: vm.surname,
 					phone: vm.phone,

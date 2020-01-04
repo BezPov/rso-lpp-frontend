@@ -51,7 +51,7 @@
 			login() {
 				let vm = this;
 
-				vm.axios.post('http://localhost:8080/user/login', {
+				vm.axios.post('http://35.225.182.234/api/account/user/login', {
 					email: vm.email,
 					password: vm.password
 				})
@@ -60,7 +60,7 @@
 					if (response && response.status === 200) vm.$store.commit('login', response.data);
 
 					// get user's credit account data
-					vm.axios.get(`http://localhost:8082/creditAccount/${response.data._id}`)
+					vm.axios.get(`http://35.225.182.234/api/payment/creditAccount/${response.data._id}`)
 					.then(function (creditResponse) {
 						if (creditResponse) vm.$store.commit('appendCreditAccount', creditResponse.data);
 					})
