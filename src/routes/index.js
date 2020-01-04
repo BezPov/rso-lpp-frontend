@@ -6,6 +6,8 @@ import Payment from '../views/Payment';
 import Profile from '../views/Profile';
 import Schedules from '../views/Schedules';
 import StationDetails from '../views/StationDetails';
+import SignUp from '../views/SignUp';
+import Login from "../views/Login";
 
 Vue.use(Router);
 
@@ -36,7 +38,19 @@ export default new Router({
 				{
 					path: 'profile',
 					name: 'profile',
-					component: Profile
+					component: Profile,
+					children: [
+						{
+							path: '/',
+							name: 'login',
+							component: Login
+						},
+						{
+							path: 'signup',
+							name: 'signup',
+							component: SignUp
+						}
+					]
 				}
 			]
 		},

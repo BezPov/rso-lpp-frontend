@@ -10,19 +10,19 @@
 				grow
 				fixed
 		>
-			<v-btn value="schedules" to="schedules">
+			<v-btn value="schedules" to="/schedules">
 				<v-icon>mdi-bus</v-icon>
 			</v-btn>
 
-			<v-btn value="map" to="map">
+			<v-btn value="map" to="/map">
 				<v-icon>mdi-map</v-icon>
 			</v-btn>
 
-			<v-btn value="payment" to="payment">
+			<v-btn value="payment" to="/payment">
 				<v-icon>mdi-credit-card-outline</v-icon>
 			</v-btn>
 
-			<v-btn value="profile" to="profile">
+			<v-btn value="profile" to="/profile">
 				<v-icon>mdi-account</v-icon>
 			</v-btn>
 		</v-bottom-navigation>
