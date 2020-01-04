@@ -34,7 +34,7 @@
 		name: "MainView",
 		data () {
 			return {
-				bottomNav: 'recent',
+				bottomNav: 'schedules',
 			}
 		}
 	}

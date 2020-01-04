@@ -21,8 +21,10 @@
 
 		},
 
-		data: () => ({
-			//
-		}),
+		data() {
+			return {}
+		},
+		created() {
+		}
 	};
 </script>
