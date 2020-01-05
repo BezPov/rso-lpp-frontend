@@ -148,7 +148,7 @@
 					stationId: 6007
 				};
 
-				vm.$requestsHandler.post('/api/feedback/create', feedbackData)
+				vm.$requestsHandler.post('/api/feedback/feedback/create', feedbackData)
 				.then(function (response) {
 					console.log(response);
 				})
