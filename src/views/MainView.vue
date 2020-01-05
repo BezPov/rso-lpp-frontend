@@ -10,7 +10,7 @@
 				grow
 				fixed
 		>
-			<v-btn value="schedules" to="/schedules">
+			<v-btn value="stations" to="/stations">
 				<v-icon>mdi-bus</v-icon>
 			</v-btn>
 
@@ -34,7 +34,7 @@
 		name: "MainView",
 		data () {
 			return {
-				bottomNav: 'schedules',
+				bottomNav: 'stations',
 			}
 		}
 	}

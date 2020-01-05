@@ -1,12 +1,12 @@
 <template>
 	<v-layout>
-		Schedules
+		Stations
 	</v-layout>
 </template>
 
 <script>
 	export default {
-		name: "Schedules"
+		name: "Stations"
 	}
 </script>
 

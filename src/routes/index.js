@@ -4,7 +4,7 @@ import MainView from '../views/MainView';
 import Map from '../views/Map';
 import Payment from '../views/Payment';
 import Profile from '../views/Profile';
-import Schedules from '../views/Schedules';
+import Stations from '../views/Stations';
 import StationDetails from '../views/StationDetails';
 import SignUp from '../views/SignUp';
 import Login from '../views/Login';
@@ -13,7 +13,6 @@ import CardLogin from '../views/CardLogin';
 Vue.use(Router);
 
 export default new Router({
-	mode: 'history',
 	base: process.env.BASE_URL,
 	routes: [
 		{
@@ -22,9 +21,9 @@ export default new Router({
 			component: MainView,
 			children: [
 				{
-					path: 'schedules',
-					name: 'schedules',
-					component: Schedules
+					path: 'stations',
+					name: 'stations',
+					component: Stations
 				},
 				{
 					path: 'map',
