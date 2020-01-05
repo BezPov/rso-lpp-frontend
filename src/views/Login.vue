@@ -57,6 +57,7 @@
 				})
 				.then(function (response) {
 					console.log(response);
+
 					if (response && response.status === 200) vm.$store.commit('login', response.data);
 
 					// get user's credit account data
