@@ -5,6 +5,9 @@
 				color="#33C88F"
 				dark
 		>
+			<v-layout justify-center>
+				<h2>LPP</h2>
+			</v-layout>
 		</v-app-bar>
 
 		<v-content>
