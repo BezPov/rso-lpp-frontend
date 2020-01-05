@@ -14,6 +14,61 @@
 				</v-progress-circular>
 			</div>
 			<p>Stanje na računu: <span>{{creditAccount}}</span></p>
+
+			<v-dialog
+					v-model="dialog"
+					max-width="290"
+			>
+				<v-card>
+					<v-card-title class="headline">Pošljite nam povratne informacije</v-card-title>
+
+					<v-card-text>
+						Koliko je znašala zamuda avtobusa?
+
+						<v-slider
+								v-model="busDelay"
+								:tick-labels="ticksLabels"
+								:max="3"
+								step="1"
+								ticks="always"
+								tick-size="4"
+								color="#33C88F"
+						></v-slider>
+
+						Koliko gneče je na avtobusu?
+
+						<v-slider
+								v-model="croudAmount"
+								:tick-labels="ticksLabels"
+								:max="3"
+								step="1"
+								ticks="always"
+								tick-size="4"
+								color="#33C88F"
+						></v-slider>
+					</v-card-text>
+
+					<v-card-actions>
+						<v-spacer></v-spacer>
+
+						<v-btn
+								color="red"
+								text
+								@click="dialog = false"
+						>
+							Ne pošlji
+						</v-btn>
+
+						<v-btn
+								color="#33C88F"
+								text
+								@click="sendFeedback"
+						>
+							Pošlji
+						</v-btn>
+					</v-card-actions>
+				</v-card>
+			</v-dialog>
 		</v-container>
 		<v-container v-else>
 			Za plačilo voznine morate biti prijavljeni v aplikaciji.
@@ -29,7 +84,16 @@
 				ticketPrice: 130, // CHANGE IF DIFFERENT
 				label: 'PRISLONI',
 				interval: {},
-				value: 0
+				value: 0,
+				dialog: false,
+				busDelay: 0,
+				croudAmount: 0,
+				ticksLabels: [
+					'Nič',
+					'Malo',
+					'Srednje',
+					'Veliko',
+				]
 			}
 		},
 		beforeDestroy() {
@@ -60,6 +124,7 @@
 									clearInterval(vm.interval);
 									vm.label = 'SREČNO POT';
 									vm.$store.commit('appendCreditAccount', response.data);
+									vm.dialog = true;
 									return;
 								}
 								vm.value += 10
@@ -71,6 +136,27 @@
 				} else {
 					console.log("NO MONEY");
 				}
+			},
+			sendFeedback() {
+				let vm = this;
+
+				let feedbackData = {
+					userId: vm.$store.state.user._id,
+					arrivalDelay: vm.busDelay,
+					croudAmount: vm.croudAmount,
+					busNumber: 7,
+					stationId: 6007
+				};
+
+				vm.$requestsHandler.post('/api/feedback/create', feedbackData)
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+				vm.dialog = false;
 			}
 		},
 		computed: {
