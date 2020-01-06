@@ -7,9 +7,7 @@
 					class="primary relative"
 					dark
 			>
-				<v-layout fill-height align-center>
-					<h3 class="font-weight-regular">Uporabnik</h3>
-				</v-layout>
+				<v-toolbar-title>Uporabnik</v-toolbar-title>
 			</v-app-bar>
 		</template>
 

@@ -1,15 +1,13 @@
 <template>
 	<v-row>
 		<v-col cols="12">
-			Ustvari nov profil
-		</v-col>
-		<v-col cols="12">
 			<v-text-field
 					v-model="name"
 					label="Ime"
 					single-line
-					dense
+					outlined
 					required
+					hide-details
 			></v-text-field>
 		</v-col>
 		<v-col cols="12">
@@ -17,7 +15,8 @@
 					v-model="surname"
 					label="Priimek"
 					single-line
-					dense
+					outlined
+					hide-details
 					required
 			></v-text-field>
 		</v-col>
@@ -26,7 +25,8 @@
 					v-model="phone"
 					label="Telefon"
 					single-line
-					dense
+					outlined
+					hide-details
 					required
 			></v-text-field>
 		</v-col>
@@ -35,7 +35,8 @@
 					v-model="cardId"
 					label="Številka kartice Urbana"
 					single-line
-					dense
+					hide-details
+					outlined
 					required
 			></v-text-field>
 		</v-col>
@@ -44,7 +45,8 @@
 					v-model="email"
 					label="E-pošta"
 					single-line
-					dense
+					hide-details
+					outlined
 					required
 			></v-text-field>
 		</v-col>
@@ -54,7 +56,8 @@
 					label="Geslo"
 					type="password"
 					single-line
-					dense
+					outlined
+					hide-details
 					required
 			></v-text-field>
 		</v-col>
@@ -64,8 +67,9 @@
 					label="Ponovno geslo"
 					type="password"
 					single-line
-					dense
+					outlined
 					required
+					hide-details
 			></v-text-field>
 		</v-col>
 		<v-col cols="12" class="button-wrapper">

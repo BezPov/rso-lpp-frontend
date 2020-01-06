@@ -8,6 +8,8 @@
             :placeholder="placeholder"
             prepend-inner-icon="mdi-magnify"
             clearable
+            append-icon="mdi-refresh"
+            @click:append="$emit('refresh')"
     />
 </template>
 

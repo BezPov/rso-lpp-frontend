@@ -13,3 +13,11 @@ a {
 .absolute {
   position: absolute !important;
 }
+
+.search-toolbar > .v-toolbar__content {
+  padding: 4px 6px;
+}
+
+.v-app-bar {
+  z-index: 1;
+}

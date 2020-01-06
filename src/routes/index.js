@@ -10,11 +10,11 @@ import StationDetails from '../components/custom/Stations/StationDetails';
 import Buses from '@/components/custom/Buses/Buses';
 import BusDetails from '@/components/custom/Buses/BusDetails';
 
-import SignUp from '../components/custom/User/Login/SignUp';
+import SignUp from '../components/custom/Login/SignUp';
 
-import Login from '../components/custom/User/Login/Login';
+import Login from '../components/custom/Login/Login';
 
-import CardLogin from '../components/custom/User/Login/LoginWithCard';
+import CardLogin from '../components/custom/Login/LoginWithCard';
 import RouteFinder from "../components/custom/RouteFinder/RouteFinder";
 
 Vue.use(Router);

@@ -2,9 +2,9 @@
     <v-card class="mb-3 pb-3">
         <v-card-title>{{ arrival.busNumber }}</v-card-title>
 
-        <v-layout column px-4>
-            <v-flex>
-                <h3>{{ arrival.estimatedTimeOfArrival }} min</h3>
+        <v-layout px-4>
+            <v-flex v-for="({ minutes, time}, index) in arrival.arrivals.slice(0, 3)" :key="index">
+                <h3>{{ minutes }} min</h3>
             </v-flex>
         </v-layout>
     </v-card>
