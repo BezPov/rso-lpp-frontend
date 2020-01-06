@@ -1,33 +1,33 @@
 <template>
-	<v-app>
-		<v-app-bar
-				app
-				color="#33C88F"
-				dark
-		>
-			<v-layout justify-center>
-				<h2>LPP</h2>
+    <v-app>
+        <v-content class="app-container">
+			<v-layout column fill-height>
+				<router-view/>
 			</v-layout>
-		</v-app-bar>
-
-		<v-content>
-			<router-view/>
-		</v-content>
-	</v-app>
+        </v-content>
+    </v-app>
 </template>
 
 <script>
-	export default {
-		name: 'App',
+    export default {
+        name: 'App',
 
-		components: {
+        components: {},
 
-		},
-
-		data() {
-			return {}
-		},
-		created() {
-		}
-	};
+        data() {
+            return {}
+        },
+        created() {
+        }
+    };
 </script>
+
+<style>
+	.app-container {
+		position: absolute;
+		padding: 0 !important;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+</style>

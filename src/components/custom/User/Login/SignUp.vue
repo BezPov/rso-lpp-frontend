@@ -69,7 +69,9 @@
 			></v-text-field>
 		</v-col>
 		<v-col cols="12" class="button-wrapper">
-			<v-btn large dark color="#33C88F" v-on:click="signUp()">USTVARI RAČUN</v-btn>
+			<v-layout justify-end>
+				<v-btn large dark color="primary" v-on:click="signUp()">USTVARI RAČUN</v-btn>
+			</v-layout>
 		</v-col>
 	</v-row>
 </template>

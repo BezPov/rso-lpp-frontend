@@ -11,6 +11,8 @@ Vue.prototype.$_ = lodash;
 
 Vue.config.productionTip = false;
 
+import '@/assets/css/main.scss';
+
 new Vue({
   router,
   store,
