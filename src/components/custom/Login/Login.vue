@@ -5,7 +5,7 @@
             <v-row>
                 <v-col cols="12">
                     <v-layout justify-center>
-                        <img src="../../../../assets/images/user-profile.png" class="profile-avatar">
+                        <img src="../../../assets/images/user-profile.png" class="profile-avatar">
                     </v-layout>
                 </v-col>
 
@@ -14,7 +14,8 @@
                             v-model="email"
                             label="E-pošta"
                             single-line
-                            dense
+                            outlined
+                            hide-details
                             required
                     ></v-text-field>
                 </v-col>
@@ -25,14 +26,22 @@
                             label="Geslo"
                             type="password"
                             single-line
-                            dense
+                            outlined
+                            hide-details
                             required
                     ></v-text-field>
                 </v-col>
 
                 <v-col cols="12">
                     <v-layout justify-center>
-                        <v-btn large class="primary" v-on:click="login()">PRIJAVA</v-btn>
+                        <v-btn
+                                large
+                                class="primary"
+                                @click="login()"
+                                :loading="state === 'logging_in'"
+                        >
+                            PRIJAVA
+                        </v-btn>
                     </v-layout>
                 </v-col>
 
@@ -62,12 +71,15 @@
         data() {
             return {
                 email: '',
-                password: ''
+                password: '',
+                state: 'idle'
             }
         },
         methods: {
             login() {
                 let vm = this;
+
+                vm.state = 'logging_in';
 
                 vm.$requestsHandler.post('/api/account/user/login', {
                     email: vm.email,
@@ -89,7 +101,9 @@
                     })
                     .catch(function (error) {
                         console.log(error);
-                    });
+                    }).finally(() => {
+                    vm.state = 'idle';
+                })
             }
         }
     }

@@ -4,7 +4,7 @@
 			<v-app-bar
 					app
 					primary
-					class="primary relative"
+					class="primary relative search-toolbar"
 					dark
 			>
 				<v-layout fill-height align-center>
@@ -12,16 +12,8 @@
 						<search-field
 								placeholder="Išči po postajah ..."
 								@change="searchQuery = $event"
+								@refresh="fetchData"
 						/>
-					</v-flex>
-
-					<v-flex shrink ml-3>
-						<v-btn
-								icon
-								@click="fetchData"
-						>
-							<v-icon>mdi-refresh</v-icon>
-						</v-btn>
 					</v-flex>
 				</v-layout>
 			</v-app-bar>

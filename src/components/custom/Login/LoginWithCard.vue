@@ -7,6 +7,7 @@
 						:size="300"
 						:width="15"
 						:value="value"
+						color="primary"
 						v-on:click="cardLogin()"
 				>
 					{{ label }}
