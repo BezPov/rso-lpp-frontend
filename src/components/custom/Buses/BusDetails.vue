@@ -59,7 +59,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
     import MainContainer from "../../generic/MainContainer";
 
     export default {
@@ -85,8 +84,7 @@
 
                 vm.state = 'loading';
 
-                //vm.$requestsHandler.get(`/api/parser/buses/${vm.$route.params.busId}`)
-                axios.get(`http://localhost:8082/buses/${vm.$route.params.busId}`)
+                vm.$requestsHandler.get(`/api/parser/buses/${vm.$route.params.busId}`)
                     .then((res) => {
                         if (res.data.success) {
                             vm.data = res.data.data;
