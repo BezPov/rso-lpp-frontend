@@ -21,3 +21,7 @@ a {
 .v-app-bar {
   z-index: 1;
 }
+
+.v-item-group.v-bottom-navigation .v-btn {
+  height: 100% !important;
+}
