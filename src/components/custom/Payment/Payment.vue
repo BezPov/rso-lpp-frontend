@@ -1,84 +1,40 @@
 <template>
-	<v-layout>
-		<v-container v-if="loggedIn">
-			<div class="text-center">
-				<v-progress-circular
-						:rotate="-90"
-						:size="300"
-						:width="15"
-						:value="value"
-						color="#33C88F"
-						v-on:click="makeTransaction()"
-				>
-					{{ label }}
-				</v-progress-circular>
-			</div>
-			<p>Stanje na računu: <span>{{creditAccount}}</span></p>
-
-			<v-dialog
-					v-model="dialog"
-					max-width="290"
+	<main-container>
+		<template v-slot:appBar>
+			<v-app-bar
+					app
+					primary
+					class="primary relative"
+					dark
 			>
-				<v-card>
-					<v-card-title class="headline">Pošljite nam povratne informacije</v-card-title>
+				<v-layout fill-height align-center>
+					<h3 class="font-weight-regular">Plačevanje z Urbano</h3>
+				</v-layout>
+			</v-app-bar>
+		</template>
 
-					<v-card-text>
-						Koliko je znašala zamuda avtobusa?
+		<template v-slot:content>
+			<v-layout fill-height column pa-3>
+				<v-flex v-if="loggedIn">
+					<payment-content/>
+				</v-flex>
 
-						<v-slider
-								v-model="busDelay"
-								:tick-labels="ticksLabels"
-								:max="3"
-								step="1"
-								ticks="always"
-								tick-size="4"
-								color="#33C88F"
-						></v-slider>
-
-						Koliko gneče je na avtobusu?
-
-						<v-slider
-								v-model="croudAmount"
-								:tick-labels="ticksLabels"
-								:max="3"
-								step="1"
-								ticks="always"
-								tick-size="4"
-								color="#33C88F"
-						></v-slider>
-					</v-card-text>
-
-					<v-card-actions>
-						<v-spacer></v-spacer>
-
-						<v-btn
-								color="red"
-								text
-								@click="dialog = false"
-						>
-							Ne pošlji
-						</v-btn>
-
-						<v-btn
-								color="#33C88F"
-								text
-								@click="sendFeedback"
-						>
-							Pošlji
-						</v-btn>
-					</v-card-actions>
-				</v-card>
-			</v-dialog>
-		</v-container>
-		<v-container v-else>
-			Za plačilo voznine morate biti prijavljeni v aplikaciji.
-		</v-container>
-	</v-layout>
+				<v-flex v-else>
+					<v-layout fill-height justify-center align-center>
+						<p class="grey--text">Za plačevanje morate biti prijavljeni</p>
+					</v-layout>
+				</v-flex>
+			</v-layout>
+		</template>
+	</main-container>
 </template>
 
 <script>
+	import MainContainer from "../../generic/MainContainer";
+	import PaymentContent from "./PaymentContent";
 	export default {
 		name: "Payment",
+		components: {PaymentContent, MainContainer},
 		data() {
 			return {
 				ticketPrice: 130, // CHANGE IF DIFFERENT

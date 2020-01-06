@@ -1,8 +1,11 @@
 <template>
     <v-row>
         <v-col cols="12">
-            <img src="../assets/images/user-profile.png" class="profile-avatar">
+            <v-layout justify-center>
+                <img src="../../../../assets/images/user-profile.png" class="profile-avatar">
+            </v-layout>
         </v-col>
+
         <v-col cols="12">
             <v-text-field
                     v-model="email"
@@ -22,18 +25,27 @@
                     required
             ></v-text-field>
         </v-col>
+
         <v-col cols="12">
-            <v-btn large dark color="#33C88F" v-on:click="login()">PRIJAVA</v-btn>
+            <v-layout justify-center>
+                <v-btn large class="primary" v-on:click="login()">PRIJAVA</v-btn>
+            </v-layout>
         </v-col>
+
         <v-col cols="12">
-            <router-link to="/profile/signup">
-                Ustvari račun
-            </router-link>
+            <v-layout justify-center>
+                <router-link to="/profile/signup">
+                    Ustvari račun
+                </router-link>
+            </v-layout>
         </v-col>
+
         <v-col cols="12">
-            <router-link to="/profile/cardLogin">
-                Prijavi se z urbano
-            </router-link>
+            <v-layout justify-center>
+                <router-link to="/profile/cardLogin">
+                    Prijavi se z urbano
+                </router-link>
+            </v-layout>
         </v-col>
     </v-row>
 </template>
@@ -77,7 +89,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     .profile-avatar {
         width: 150px;
         height: 150px;

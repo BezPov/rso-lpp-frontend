@@ -25,7 +25,7 @@
 					</v-btn>
 
 					<v-btn
-							color="#33C88F"
+							color="primary"
 							text
 							@click="dialog = false"
 					>
