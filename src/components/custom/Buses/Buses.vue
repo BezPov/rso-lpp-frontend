@@ -61,7 +61,6 @@
 <script>
     import BusListItem from "./BusListItem";
 
-    import axios from 'axios';
     import SearchField from "../../generic/SearchField";
     import MainContainer from "../../generic/MainContainer";
 
@@ -95,8 +94,7 @@
                     params.q = vm.searchQuery;
                 }
 
-                //vm.$requestsHandler.get('/api/parser/buses', { params })
-                axios.get('http://localhost:8082/buses', {params})
+                vm.$requestsHandler.get('/api/parser/buses', { params })
                     .then((res) => {
                         if (res.data.success) {
                             vm.data = res.data.data;
