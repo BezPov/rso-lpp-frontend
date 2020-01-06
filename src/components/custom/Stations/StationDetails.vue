@@ -105,8 +105,6 @@
     import ArrivalListItem from "../Arrivals/ArivalsListItem";
     import MainContainer from "../../generic/MainContainer";
 
-	import axios from 'axios';
-
     export default {
         name: "StationDetails",
         components: {MainContainer, ArrivalListItem},
@@ -154,8 +152,7 @@
             async fetchArrivals() {
                 const vm = this;
 
-				axios.get(`http://localhost:8082/arrivals/${vm.$route.params.stationId}/live`)
-                //vm.$requestsHandler.get(`/api/parser/arrivals/${vm.$route.params.stationId}/live`)
+                vm.$requestsHandler.get(`/api/parser/arrivals/${vm.$route.params.stationId}/live`)
                     .then((res) => {
                         if (res.data.success) {
                             vm.liveArrivals.data = res.data.data;
