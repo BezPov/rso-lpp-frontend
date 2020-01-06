@@ -77,9 +77,4 @@
     .v-progress-circular {
         margin: 1rem;
     }
-
-    a {
-        color: #5d5d5d !important;
-        text-decoration: none;
-    }
 </style>

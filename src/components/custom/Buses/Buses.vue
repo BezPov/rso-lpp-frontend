@@ -46,7 +46,7 @@
                         </v-flex>
 
                         <v-flex shrink>
-                            <p class="text-center grey--text">Pri pridobivanju postaj je prišlo do napake, poskusite
+                            <p class="text-center grey--text">Pri pridobivanju relacij je prišlo do napake, poskusite
                                 ponovno</p>
                         </v-flex>
                     </v-layout>

@@ -1,53 +1,59 @@
 <template>
-    <v-row>
-        <v-col cols="12">
-            <v-layout justify-center>
-                <img src="../../../../assets/images/user-profile.png" class="profile-avatar">
-            </v-layout>
-        </v-col>
+    <v-container>
+        <v-form>
 
-        <v-col cols="12">
-            <v-text-field
-                    v-model="email"
-                    label="E-pošta"
-                    single-line
-                    dense
-                    required
-            ></v-text-field>
-        </v-col>
-        <v-col cols="12">
-            <v-text-field
-                    v-model="password"
-                    label="Geslo"
-                    type="password"
-                    single-line
-                    dense
-                    required
-            ></v-text-field>
-        </v-col>
+            <v-row>
+                <v-col cols="12">
+                    <v-layout justify-center>
+                        <img src="../../../../assets/images/user-profile.png" class="profile-avatar">
+                    </v-layout>
+                </v-col>
 
-        <v-col cols="12">
-            <v-layout justify-center>
-                <v-btn large class="primary" v-on:click="login()">PRIJAVA</v-btn>
-            </v-layout>
-        </v-col>
+                <v-col cols="12">
+                    <v-text-field
+                            v-model="email"
+                            label="E-pošta"
+                            single-line
+                            dense
+                            required
+                    ></v-text-field>
+                </v-col>
 
-        <v-col cols="12">
-            <v-layout justify-center>
-                <router-link to="/profile/signup">
-                    Ustvari račun
-                </router-link>
-            </v-layout>
-        </v-col>
+                <v-col cols="12">
+                    <v-text-field
+                            v-model="password"
+                            label="Geslo"
+                            type="password"
+                            single-line
+                            dense
+                            required
+                    ></v-text-field>
+                </v-col>
 
-        <v-col cols="12">
-            <v-layout justify-center>
-                <router-link to="/profile/cardLogin">
-                    Prijavi se z urbano
-                </router-link>
-            </v-layout>
-        </v-col>
-    </v-row>
+                <v-col cols="12">
+                    <v-layout justify-center>
+                        <v-btn large class="primary" v-on:click="login()">PRIJAVA</v-btn>
+                    </v-layout>
+                </v-col>
+
+                <v-col cols="12">
+                    <v-layout justify-center>
+                        <router-link to="/profile/signup">
+                            Ustvari račun
+                        </router-link>
+                    </v-layout>
+                </v-col>
+
+                <v-col cols="12">
+                    <v-layout justify-center>
+                        <router-link to="/profile/cardLogin">
+                            Prijavi se z urbano
+                        </router-link>
+                    </v-layout>
+                </v-col>
+            </v-row>
+        </v-form>
+    </v-container>
 </template>
 
 <script>
@@ -94,10 +100,5 @@
         width: 150px;
         height: 150px;
         border-radius: 150px;
-    }
-
-    a {
-        color: #5d5d5d !important;
-        text-decoration: none;
     }
 </style>

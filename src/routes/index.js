@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import MainView from '../components/custom/BottomNavigationView/BottomNavigationView';
-import Map from '../components/custom/RouteFinder/Map';
 import Payment from '../components/custom/Payment/Payment';
 import Profile from '../components/custom/User/Profile';
 
@@ -16,6 +15,7 @@ import SignUp from '../components/custom/User/Login/SignUp';
 import Login from '../components/custom/User/Login/Login';
 
 import CardLogin from '../components/custom/User/Login/LoginWithCard';
+import RouteFinder from "../components/custom/RouteFinder/RouteFinder";
 
 Vue.use(Router);
 
@@ -49,9 +49,9 @@ export default new Router({
 					component: Buses
 				},
 				{
-					path: 'map',
-					name: 'map',
-					component: Map
+					path: 'route',
+					name: 'route',
+					component: RouteFinder
 				},
 				{
 					path: 'payment',

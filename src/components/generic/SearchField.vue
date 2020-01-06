@@ -2,11 +2,12 @@
     <v-text-field
             solo
             :value="value"
-            @input="onKeyDown"
+            @input="onChange"
             hide-details
             light
             :placeholder="placeholder"
             prepend-inner-icon="mdi-magnify"
+            clearable
     />
 </template>
 
@@ -18,7 +19,7 @@
             placeholder: String
         },
         methods: {
-            onKeyDown(value) {
+            onChange(value) {
                 const vm = this;
 
                 vm.$emit('change', value);

@@ -18,6 +18,7 @@
 						:value="navigationItem.key"
 						:to="navigationItem.href"
 				>
+					<span>{{ navigationItem.label }}</span>
 					<v-icon>{{ navigationItem.icon }}</v-icon>
 				</v-btn>
 			</v-bottom-navigation>
@@ -39,27 +40,32 @@
 					{
 						key: 'stations',
 						href: '/stations',
-						icon: 'mdi-bus-stop'
+						icon: 'mdi-bus-stop',
+						label: 'Postaje'
 					},
 					{
 						key: 'buses',
 						href: '/buses',
-						icon: 'mdi-bus'
+						icon: 'mdi-bus',
+						label: 'Relacije'
 					},
 					{
-						key: 'map',
-						href: '/map',
-						icon: 'mdi-map'
+						key: 'route',
+						href: '/route',
+						icon: 'mdi-map',
+						label: 'Iskanje poti'
 					},
 					{
 						key: 'payment',
 						href: '/payment',
-						icon: 'mdi-credit-card-outline'
+						icon: 'mdi-credit-card-outline',
+						label: 'Plačevanje'
 					},
 					{
 						key: 'profile',
 						href: '/profile',
-						icon: 'mdi-account'
+						icon: 'mdi-account',
+						label: 'Uporabnik'
 					}
 				];
 			}
