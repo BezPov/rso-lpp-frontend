@@ -94,7 +94,7 @@
                     params.q = vm.searchQuery;
                 }
 
-                vm.$requestsHandler.get('/api/parser/buses', { params })
+                vm.$requestsHandler.busService.get('/', { params })
                     .then((res) => {
                         if (res.data.success) {
                             vm.data = res.data.data;

@@ -60,7 +60,7 @@
                     params.q = vm.searchQuery;
                 }
 
-                vm.$requestsHandler.get('/api/parser/stations', { params })
+                vm.$requestsHandler.stationsService.get('/', { params })
                     .then((res) => {
                         if (res.data.success) {
                             vm.items = res.data.data;

@@ -84,7 +84,7 @@
 
                 vm.state = 'loading';
 
-                vm.$requestsHandler.get(`/api/parser/buses/${vm.$route.params.busId}`)
+                vm.$requestsHandler.busService.get(`${vm.$route.params.busId}`)
                     .then((res) => {
                         if (res.data.success) {
                             vm.data = res.data.data;

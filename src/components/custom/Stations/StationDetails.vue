@@ -133,7 +133,7 @@
                 vm.state = 'loading';
                 vm.liveArrivals.state = 'loading';
 
-                vm.$requestsHandler.get(`/api/parser/stations/${vm.$route.params.stationId}`)
+                vm.$requestsHandler.stationsService.get(`/${vm.$route.params.stationId}`)
                     .then((res) => {
                         if (res.data.success) {
                             vm.data = res.data.data;
@@ -152,7 +152,7 @@
             async fetchArrivals() {
                 const vm = this;
 
-                vm.$requestsHandler.get(`/api/parser/arrivals/${vm.$route.params.stationId}/live`)
+                vm.$requestsHandler.arrivalsService.get(`/${vm.$route.params.stationId}/live`)
                     .then((res) => {
                         if (res.data.success) {
                             vm.liveArrivals.data = res.data.data;

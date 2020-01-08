@@ -1,8 +1,18 @@
 import axios from 'axios';
 
-const instance = axios.create({
-    baseURL: 'http://35.225.182.234',
-    timeout: 5000
-});
+const baseURL = 'http://35.225.182.234';
 
-export default instance;
+export default {
+    stationsService: axios.create({
+        baseURL: `${baseURL}/api/stations`,
+        timeout: 5000
+    }),
+    busService: axios.create({
+        baseURL: `${baseURL}/api/buses`,
+        timeout: 5000
+    }),
+    arrivalsService: axios.create({
+        baseURL: `${baseURL}/api/arrivals`,
+        timeout: 5000
+    })
+};

@@ -18,7 +18,7 @@
 						:value="navigationItem.key"
 						:to="navigationItem.href"
 				>
-					<span>{{ navigationItem.label }}</span>
+					<span class="mt-1">{{ navigationItem.label }}</span>
 					<v-icon>{{ navigationItem.icon }}</v-icon>
 				</v-btn>
 			</v-bottom-navigation>

@@ -109,8 +109,7 @@
                     params.q = vm.searchQuery;
                 }
 
-                //vm.$requestsHandler.get('/api/parser/buses', { params })
-                axios.get('http://localhost:8082/buses', {params})
+                vm.$requestsHandler.busService.get('/', { params })
                     .then((res) => {
                         if (res.data.success) {
                             vm.data = res.data.data;
