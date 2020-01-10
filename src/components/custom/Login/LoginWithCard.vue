@@ -1,32 +1,56 @@
 <template>
-    <v-flex>
-		<v-layout column align-center>
-			<v-flex mb-4>
-				<v-progress-circular
-						:rotate="-90"
-						:size="300"
-						:width="15"
-						:value="value"
-						color="primary"
-						v-on:click="cardLogin()"
+	<main-container>
+		<template v-slot:appBar>
+			<v-app-bar
+					color="primary"
+					dark
+			>
+				<v-btn
+						icon
+						@click="$router.back()"
 				>
-					{{ label }}
-				</v-progress-circular>
-			</v-flex>
+					<v-icon>mdi-arrow-left</v-icon>
+				</v-btn>
 
-			<v-flex mt-4>
-				<router-link to="/profile/">
-					Prijavi se z geslom
-				</router-link>
-			</v-flex>
-		</v-layout>
-	</v-flex>
+				<v-toolbar-title>Prijava z Urbano</v-toolbar-title>
+			</v-app-bar>
+		</template>
+
+		<template v-slot:content>
+			<v-layout column fill-height>
+				<v-flex mt-4>
+					<v-layout column align-center>
+						<v-flex mb-4>
+							<v-progress-circular
+									:rotate="-90"
+									:size="300"
+									:width="15"
+									:value="value"
+									color="primary"
+									v-on:click="cardLogin()"
+							>
+								{{ label }}
+							</v-progress-circular>
+						</v-flex>
+
+						<v-flex mt-4>
+							<router-link to="/profile/">
+								Prijavi se z geslom
+							</router-link>
+						</v-flex>
+					</v-layout>
+				</v-flex>
+			</v-layout>
+		</template>
+	</main-container>
 </template>
 
 <script>
-    export default {
+    import MainContainer from "../../generic/MainContainer";
+	export default {
         name: "CardLogin",
-        data() {
+		components: { MainContainer },
+		data() {
             return {
                 status: 'idle',
                 cardId: '1234', // CHANGE THIS VALUE FOR ANOTHER CARD

@@ -1,11 +1,9 @@
 <template>
-    <v-card class="mb-3 py-2" @click="openBusDetails">
-		<v-layout column px-3>
-			<h2 class="text-left font-weight-regular">{{ bus.name }}</h2>
-
-			<p class="mb-0 text-left">{{ bus.busNumber }}</p>
+	<v-card class="mb-3 py-2" @click="openBusDetails">
+		<v-layout column pa-3 mx-2>
+			<h2 class="text-left font-weight-regular text-uppercase font-weight-bold grey--text text--darken-2">{{ bus.busNumber }} {{ bus.name }}</h2>
 		</v-layout>
-    </v-card>
+	</v-card>
 </template>
 
 <script>

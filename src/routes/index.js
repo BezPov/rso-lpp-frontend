@@ -33,6 +33,16 @@ export default new Router({
 			component: BusDetails
 		},
 		{
+			path: '/profile/signup',
+			name: 'signup',
+			component: SignUp
+		},
+		{
+			path: '/profile/cardLogin',
+			name: 'cardLogin',
+			component: CardLogin
+		},
+		{
 			path: '/',
 			redirect: { name: 'stations' },
 			name: 'main',
@@ -67,16 +77,6 @@ export default new Router({
 							path: '/',
 							name: 'login',
 							component: Login
-						},
-						{
-							path: 'signup',
-							name: 'signup',
-							component: SignUp
-						},
-						{
-							path: 'cardLogin',
-							name: 'cardLogin',
-							component: CardLogin
 						}
 					]
 				}

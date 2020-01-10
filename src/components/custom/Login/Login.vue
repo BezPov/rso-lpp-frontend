@@ -36,6 +36,7 @@
                     <v-layout justify-center>
                         <v-btn
                                 large
+                                rounded
                                 class="primary"
                                 @click="login()"
                                 :loading="state === 'logging_in'"
