@@ -1,6 +1,6 @@
 <template>
-    <v-card class="mb-3 pb-3">
-        <v-layout align-center pa-4>
+    <v-card class="mb-3 py-3">
+        <v-layout align-center px-3 pb-2>
             <v-flex shrink mr-3>
                 <v-chip color="primary">
                     <h2 class="font-weight-regular">{{ arrival.busNumber }}</h2>

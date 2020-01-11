@@ -12,7 +12,7 @@
                     <v-icon>mdi-arrow-left</v-icon>
                 </v-btn>
 
-                <v-toolbar-title>Postaja</v-toolbar-title>
+                <v-toolbar-title>{{ data ? data.name : 'Nalagam postajo ...' }}</v-toolbar-title>
 
                 <v-spacer></v-spacer>
 
@@ -54,10 +54,10 @@
                                 <v-flex grow></v-flex>
 
                                 <v-flex shrink class="white--text px-3">
-                                    <h1 class="text-uppercase">{{ data.name }}</h1>
-                                    <h3>{{ data.referenceId }}</h3>
-                                    <h3 v-if="data.referenceId % 2 === 0" class="mt-1 text-left">Iz centra</h3>
-                                    <h3 v-else class="mt-1 text-left">V center</h3>
+                                    <h1 class="text-uppercase font-weight-regular">{{ data.name }}</h1>
+                                    <h3 class="font-weight-regular">{{ data.referenceId }}</h3>
+                                    <h3 v-if="data.referenceId % 2 === 0" class="mt-1 text-left font-weight-regular">Iz centra</h3>
+                                    <h3 v-else class="mt-1 text-left font-weight-regular">V center</h3>
                                 </v-flex>
                             </v-layout>
                         </v-flex>
@@ -69,9 +69,9 @@
                                 </v-flex>
 
                                 <v-flex shrink>
-                                    <v-layout wrap>
+                                    <v-layout style="overflow-x: auto; margin: 0 -12px;" px-3 pb-2>
                                         <v-chip v-for="bus in data.routes" :key="bus.busNumber" color="primary"
-                                                class="mr-2 mb-3">
+                                                class="mr-2 flex-shrink-0">
                                             <h2 class="font-weight-regular">{{ bus.busNumber }}</h2>
                                         </v-chip>
                                     </v-layout>
@@ -214,6 +214,7 @@
 
 <style scoped>
     .image-container {
+        background-color: #484848;
         background-image: url("../../../assets/images/LPP.png");
         background-position: center;
         background-size: cover;
