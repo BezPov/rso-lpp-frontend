@@ -39,7 +39,7 @@
                 <v-flex v-else>
                     <v-layout fill-height column>
                         <v-flex shrink mb-4 mt-1>
-                            <h3 class="font-weight-regular text-uppercase mb-2">Začetna postaja</h3>
+                            <p class="mb-2">Začetna postaja</p>
 
                             <station-autocomplete
                                     @select="selectedStations.from = $event"
@@ -47,7 +47,7 @@
                         </v-flex>
 
                         <v-flex shrink mb-4>
-                            <h3 class="font-weight-regular text-uppercase mb-2">Končna postaja</h3>
+                            <p class="mb-2">Končna postaja</p>
 
                             <station-autocomplete
                                     @select="selectedStations.to = $event"

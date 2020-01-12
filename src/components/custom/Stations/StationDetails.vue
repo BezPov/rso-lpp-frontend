@@ -23,7 +23,7 @@
         </template>
 
         <template v-slot:content>
-            <v-layout column fill-height>
+            <v-layout column fill-height style="overflow-x: hidden;">
                 <v-flex v-if="state === 'loading'" pa-3>
                     <v-layout fill-height justify-center align-center>
                         <v-progress-circular
@@ -49,23 +49,24 @@
 
                 <v-flex v-else>
                     <v-layout fill-height column>
-                        <v-flex shrink style="height: 200px;" relative>
+                        <v-flex shrink style="height: 200px; position: fixed !important; width: 100%;" relative>
                             <v-layout class="image-container" column fill-height py-4 px-1>
                                 <v-flex grow></v-flex>
 
                                 <v-flex shrink class="white--text px-3">
                                     <h1 class="text-uppercase font-weight-regular">{{ data.name }}</h1>
                                     <h3 class="font-weight-regular">{{ data.referenceId }}</h3>
-                                    <h3 v-if="data.referenceId % 2 === 0" class="mt-1 text-left font-weight-regular">Iz centra</h3>
+                                    <h3 v-if="data.referenceId % 2 === 0" class="mt-1 text-left font-weight-regular">Iz
+                                        centra</h3>
                                     <h3 v-else class="mt-1 text-left font-weight-regular">V center</h3>
                                 </v-flex>
                             </v-layout>
                         </v-flex>
 
-                        <v-flex px-3>
-                            <v-layout column>
+                        <v-flex style="margin-top: 200px; background-color: #fafafa; z-index: 10; border-radius: 6px">
+                            <v-layout column px-3>
                                 <v-flex mt-4 mb-2 shrink>
-                                    <h3 class="font-weight-regular text-uppercase">Relacije:</h3>
+                                    <p class="mb-1">Relacije</p>
                                 </v-flex>
 
                                 <v-flex shrink>
@@ -77,10 +78,14 @@
                                     </v-layout>
                                 </v-flex>
 
+                                <v-flex shrink mt-3 mb-3>
+                                    <v-divider/>
+                                </v-flex>
+
                                 <v-flex mb-3 shrink>
                                     <v-layout align-center>
                                         <v-flex>
-                                            <h3 class="font-weight-regular text-uppercase">Prihodi:</h3>
+                                            <p class="mb-0">Prihodi</p>
                                         </v-flex>
 
                                         <v-flex shrink>
