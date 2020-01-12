@@ -89,13 +89,13 @@
 								</v-expansion-panels>
 							</v-flex>
 
-							<v-flex shrink mb-3>
+							<v-flex shrink mb-2>
 								<v-divider/>
 							</v-flex>
 						</v-layout>
 
-						<v-layout column v-if="otherStations.length">
-							<p>Ostale postaje</p>
+						<v-layout column v-if="otherStations.length" mt-1>
+							<p>Vse postaje</p>
 
 							<v-flex v-for="station in otherStations" :key="station._id" shrink>
 								<station-list-item
